@@ -199,6 +199,7 @@ public class ParkingLot {
 		} else if (this.colorReg.containsKey(color)) {
 			ArrayList<String> regNoList = this.colorReg.get(color);
 			System.out.println();
+			
 			for (int i = 0; i < regNoList.size(); i++) {
 				if (!(i == regNoList.size() - 1)) {
 					System.out.print(regNoList.get(i) + ",");
