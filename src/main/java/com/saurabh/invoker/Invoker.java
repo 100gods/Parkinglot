@@ -28,7 +28,7 @@ public class Invoker {
 		Method method = null;
 		try {
 			command = Class.forName(CommandFactory.featureMap.get(Query
-					.valueOf(parts[0])));
+					.valueOf(parts[0].toLowerCase())));
 			commandObj = command.getConstructor(ParkingLot.class).newInstance(
 					parkingLot);
 			method = command.getMethod("execute", String.class);

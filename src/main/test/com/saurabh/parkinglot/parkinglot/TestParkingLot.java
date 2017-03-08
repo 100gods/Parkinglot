@@ -94,6 +94,15 @@ public class TestParkingLot {
     	assertTrue("1,2".replaceAll("\\s+", "").equalsIgnoreCase(outContent.toString().trim().replaceAll("\\s+", "")));
     	
     }
+    @Test
+    public void getSlotNumberFromRegNo(){
+    	parkingLot.createParkingLot("10");
+    	parkingLot.park("KA-01-HH-1234", "White");
+    	parkingLot.park("KA-01-HH-0234", "White");
+    	outContent.reset();
+    	parkingLot.getSlotNumberFromRegNo("KA-01-HH-0234");
+    	assertTrue("2".replaceAll("\\s+", "").equalsIgnoreCase(outContent.toString().trim().replaceAll("\\s+", "")));
+    }
 
   
 
