@@ -35,6 +35,14 @@ public class TestParkingLot {
         assertEquals(10, parkingLot.getAvailableSlotList().size());
         assertTrue("Created parking lot with 10 slots".equalsIgnoreCase(outContent.toString().trim()));
     }
+    
+    @Test
+    public void park(){
+    	parkingLot.createParkingLot("10");
+    	parkingLot.park("KA-01-HH-1234", "White");
+    	assertEquals(1, parkingLot.getSlotCar().size());
+    	assertTrue("Created parking lot with 10 slots\nAllocated slot number: 1".replaceAll("\\s+", "").equalsIgnoreCase(outContent.toString().trim().replaceAll("\\s+", "")));
+    }
 
   
 
