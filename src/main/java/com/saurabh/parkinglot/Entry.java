@@ -52,6 +52,7 @@ public class Entry {
 	            System.out.println("File not found");
 	            e.printStackTrace();
 	        }
+	        break;
 
 		default:
 			System.out.println("Usage: java -jar <jar_file_path> <input_file_path> or java -jar <jar_file_path>");

@@ -33,7 +33,7 @@ public class TestParkingLot {
         parkingLot.createParkingLot("10");
         assertEquals(10, parkingLot.getMAX_SIZE());
         assertEquals(10, parkingLot.getAvailableSlotList().size());
-        assertTrue("Created parking lot with 10 slots".equalsIgnoreCase(outContent.toString().trim()));
+        assertTrue("Created a parking lot with 10 slots".equalsIgnoreCase(outContent.toString().trim()));
     }
     
     @Test
@@ -41,7 +41,7 @@ public class TestParkingLot {
     	parkingLot.createParkingLot("10");
     	parkingLot.park("KA-01-HH-1234", "White");
     	assertEquals(1, parkingLot.getSlotCar().size());
-    	assertTrue("Created parking lot with 10 slots\nAllocated slot number: 1".replaceAll("\\s+", "").equalsIgnoreCase(outContent.toString().trim().replaceAll("\\s+", "")));
+    	assertTrue("Created a parking lot with 10 slots\nAllocated slot number: 1".replaceAll("\\s+", "").equalsIgnoreCase(outContent.toString().trim().replaceAll("\\s+", "")));
     }
     
     @Test
@@ -50,10 +50,10 @@ public class TestParkingLot {
     	parkingLot.park("KA-01-HH-1234", "White");
     	assertEquals(1, parkingLot.getSlotCar().size());
     	assertEquals(9, parkingLot.getAvailableSlotList().size());
-    	assertTrue("Created parking lot with 10 slots\nAllocated slot number: 1".replaceAll("\\s+", "").equalsIgnoreCase(outContent.toString().trim().replaceAll("\\s+", "")));
+    	assertTrue("Created a parking lot with 10 slots\nAllocated slot number: 1".replaceAll("\\s+", "").equalsIgnoreCase(outContent.toString().trim().replaceAll("\\s+", "")));
     	parkingLot.leave("1");
     	assertEquals(0, parkingLot.getSlotCar().size());
-    	assertTrue("Created parking lot with 10 slots\nAllocated slot number: 1\nSlot number 1 is free".replaceAll("\\s+", "").equalsIgnoreCase(outContent.toString().trim().replaceAll("\\s+", "")));
+    	assertTrue("Created a parking lot with 10 slots\nAllocated slot number: 1\nSlot number 1 is free".replaceAll("\\s+", "").equalsIgnoreCase(outContent.toString().trim().replaceAll("\\s+", "")));
     	assertEquals(10, parkingLot.getAvailableSlotList().size());
     }
     

@@ -94,7 +94,7 @@ public class ParkingLot {
 		this.slotCar = new HashMap<String, Car>();
 		this.RegSlot = new HashMap<String, String>();
 		this.colorReg = new HashMap<String, ArrayList<String>>();
-		System.out.println("Created parking lot with " + slotCount + " slots");
+		System.out.println("Created a parking lot with " + slotCount + " slots");
 		System.out.println();
 	}
 
