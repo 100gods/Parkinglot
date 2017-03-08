@@ -57,7 +57,7 @@ public class Invoker {
 		switch (parts.length) {
 		case 1:
 			try {
-				method.invoke(commandObj);
+				method.invoke(commandObj,query);
 			} catch (IllegalArgumentException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

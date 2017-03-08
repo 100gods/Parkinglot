@@ -173,7 +173,7 @@ public class ParkingLot {
 			System.out.println();
 		} else if (this.slotCar.size() > 0) {
 			// Print the current status.
-			System.out.println("Slot No.\tRegistration No.\tColor");
+			System.out.println("Slot No.\tRegistration No.\tColour");
 			Car car;
 			for (int i = 1; i <= this.MAX_SIZE; i++) {
 				String key = Integer.toString(i);

@@ -9,6 +9,7 @@ import java.util.Map;
 import com.saurabh.parkinglot.command.CreateLot;
 import com.saurabh.parkinglot.command.Leave;
 import com.saurabh.parkinglot.command.Park;
+import com.saurabh.parkinglot.command.Status;
 import com.saurabh.query.Query;
 
 /**
@@ -27,6 +28,7 @@ public class CommandFactory {
 		featureMap.put(Query.create_parking_lot, CreateLot.class.getCanonicalName());
 		featureMap.put(Query.park, Park.class.getCanonicalName());
 		featureMap.put(Query.leave, Leave.class.getCanonicalName());
+		featureMap.put(Query.status, Status.class.getCanonicalName());
 	}
 	
 
