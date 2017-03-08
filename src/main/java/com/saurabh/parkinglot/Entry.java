@@ -22,6 +22,8 @@ public class Entry {
 				String query=scanner.nextLine().trim();
 				if (query.equalsIgnoreCase("bye") ||query.equalsIgnoreCase("\"bye\"")  ) {
 					break;
+				}else if (query.isEmpty()) {
+					continue;
 				}
 				invoker.execute(parkingLot,query);
 				

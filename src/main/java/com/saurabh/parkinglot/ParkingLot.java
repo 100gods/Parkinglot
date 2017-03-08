@@ -139,7 +139,7 @@ public class ParkingLot {
 		if (this.MAX_SIZE == 0) {
 			System.out.println("Sorry, parking lot is not created");
 			System.out.println();
-		} else if (this.slotCar.size() > 0) {
+		} else if (!this.slotCar.isEmpty()) {
 			Car carToLeave = this.slotCar.get(slotNo);
 			if (carToLeave != null) {
 				this.slotCar.remove(slotNo);
