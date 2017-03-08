@@ -84,6 +84,16 @@ public class TestParkingLot {
     	assertTrue("KA-01-HH-1234,KA-01-HH-0234".replaceAll("\\s+", "").equalsIgnoreCase(outContent.toString().trim().replaceAll("\\s+", "")));
     	
     }
+    @Test
+    public void getSlotNumbersFromColor(){
+    	parkingLot.createParkingLot("10");
+    	parkingLot.park("KA-01-HH-1234", "White");
+    	parkingLot.park("KA-01-HH-0234", "White");
+    	outContent.reset();
+    	parkingLot.getSlotNumbersFromColor("White");
+    	assertTrue("1,2".replaceAll("\\s+", "").equalsIgnoreCase(outContent.toString().trim().replaceAll("\\s+", "")));
+    	
+    }
 
   
 
