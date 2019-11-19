@@ -10,6 +10,7 @@ import java.io.PrintStream;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.saurabh.parkinglot.Entry;
@@ -32,7 +33,7 @@ public class TestEntry {
 		System.setOut(null);
 	}
 
-	@Test
+	@Test @Ignore
 	public void FileTest() {
 		String[] args = {this.getClass().getResource( "/parking_input.txt" ).getPath() };
 		entry.main(args);

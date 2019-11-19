@@ -13,6 +13,7 @@ import com.saurabh.parkinglot.command.RegistrationNumbersFromColor;
 import com.saurabh.parkinglot.command.SlotNumberFromRegNo;
 import com.saurabh.parkinglot.command.SlotNumbersFromColor;
 import com.saurabh.parkinglot.command.Status;
+import com.saurabh.parkinglot.command.Strategy;
 import com.saurabh.query.Query;
 
 /**
@@ -35,6 +36,7 @@ public class CommandFactory {
 		featureMap.put(Query.registration_numbers_for_cars_with_colour, RegistrationNumbersFromColor.class.getCanonicalName());
 		featureMap.put(Query.slot_numbers_for_cars_with_colour, SlotNumbersFromColor.class.getCanonicalName());
 		featureMap.put(Query.slot_number_for_registration_number, SlotNumberFromRegNo.class.getCanonicalName());
+		featureMap.put(Query.strategy, Strategy.class.getCanonicalName());
 	}
 	
 

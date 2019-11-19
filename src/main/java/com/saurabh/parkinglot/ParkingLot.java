@@ -25,7 +25,6 @@ public class ParkingLot {
 			this.color = color;
 		}
 	}
-
 	// Available slots
 	ArrayList<Integer> availableSlotList;
 	// Map of Slot, Car
@@ -80,22 +79,24 @@ public class ParkingLot {
 	 * @param slotCount
 	 */
 	public void createParkingLot(String slotCount) {
+		ParkingLot parkingLot= new ParkingLot();
 		try {
-			this.MAX_SIZE = Integer.parseInt(slotCount);
+			parkingLot.MAX_SIZE = Integer.parseInt(slotCount);
 		} catch (Exception exception) {
 			System.out.println("Invalid lot count");
 			System.out.println();
 		}
-		this.availableSlotList = new ArrayList<Integer>() {
-		};
+		parkingLot.availableSlotList = new ArrayList<Integer>(){};
 		for (int i = 1; i <= this.MAX_SIZE; i++) {
 			availableSlotList.add(i);
 		}
-		this.slotCar = new HashMap<String, Car>();
-		this.RegSlot = new HashMap<String, String>();
-		this.colorReg = new HashMap<String, ArrayList<String>>();
+		parkingLot.slotCar = new HashMap<String, Car>();
+		parkingLot.RegSlot = new HashMap<String, String>();
+		parkingLot.colorReg = new HashMap<String, ArrayList<String>>();
 		System.out.println("Created a parking lot with " + slotCount + " slots");
+		
 		System.out.println();
+		Entry.parkingLots.add(parkingLot);
 	}
 
 	/**

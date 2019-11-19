@@ -5,6 +5,7 @@ package com.saurabh.invoker;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.List;
 
 import com.saurabh.parkinglot.ParkingLot;
 import com.saurabh.parkinglot.factory.CommandFactory;
@@ -21,7 +22,7 @@ public class Invoker {
 		commandFactory = new CommandFactory();
 	}
 
-	public void execute(ParkingLot parkingLot, String query) {
+	public void execute(ParkingLot parkingLot,String query) {
 		String[] parts = query.split(" ");
 		Class<?> command;
 		Object commandObj = null;

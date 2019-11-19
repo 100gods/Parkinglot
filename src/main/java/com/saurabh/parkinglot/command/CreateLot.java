@@ -4,8 +4,6 @@
 package com.saurabh.parkinglot.command;
 
 import com.saurabh.parkinglot.ParkingLot;
-import com.saurabh.parkinglot.factory.CommandFactory;
-import com.saurabh.query.Query;
 
 /**
  * @author 100gods

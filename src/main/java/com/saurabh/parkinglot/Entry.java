@@ -1,23 +1,38 @@
 package com.saurabh.parkinglot;
 
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+import com.saurabh.facade.IStrategy;
+import com.saurabh.facade.StrategyImpl;
 import com.saurabh.invoker.Invoker;
+import com.saurabh.query.Strategy;
 
 public class Entry {
 	
-
+	public static List<ParkingLot> parkingLots=new ArrayList<ParkingLot>();
+	static Strategy currentStard=Strategy.one;
+	public static Strategy getCurrentStard() {
+		return currentStard;
+	}
+	public static void setCurrentStard(Strategy currentStard) {
+		Entry.currentStard = currentStard;
+	}
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		IStrategy strategy=new StrategyImpl();
 		Invoker invoker=new Invoker();
-		ParkingLot parkingLot=new ParkingLot();
+		ParkingLot parkingLot;
 		switch (args.length) {
 		case 0:
 //			run interactive command line 
@@ -30,6 +45,7 @@ public class Entry {
 				}else if (query.isEmpty()) {
 					continue;
 				}
+				parkingLot=currentStard.equals(Strategy.one)?strategy.stardOne(query):strategy.stardTwo(query);
 				invoker.execute(parkingLot,query);
 				
 			}
@@ -42,6 +58,7 @@ public class Entry {
 	            String query;
 	            try {
 	                while ((query = br.readLine()) != null) {
+	                	parkingLot=currentStard.equals(Strategy.one)?strategy.stardOne(query):strategy.stardTwo(query);
 	                	invoker.execute(parkingLot,query);
 	                }
 	            } catch (IOException ex) {

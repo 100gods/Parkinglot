@@ -11,6 +11,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.saurabh.parkinglot.Entry;
 import com.saurabh.parkinglot.ParkingLot;
 /**
  * @author 100gods
@@ -31,9 +32,11 @@ public class TestParkingLot {
     @Test
     public void createParkingLot() throws Exception {
         parkingLot.createParkingLot("10");
-        assertEquals(10, parkingLot.getMAX_SIZE());
-        assertEquals(10, parkingLot.getAvailableSlotList().size());
-        assertTrue("Created a parking lot with 10 slots".equalsIgnoreCase(outContent.toString().trim()));
+        assertEquals(Entry.parkingLots.size(), 1);
+        parkingLot.createParkingLot("10");
+        assertEquals(Entry.parkingLots.size(), 2);
+        parkingLot.createParkingLot("10");
+        assertEquals(Entry.parkingLots.size(), 3);
     }
     
     @Test
